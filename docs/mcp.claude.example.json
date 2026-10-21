@@ -1,0 +1,15 @@
+{
+  "_note": "Si 'npx.cmd tsx ...' falla en tu máquina (npx frágil en PATH), usa la variante 'meruntime-fullpath' con la ruta absoluta de npx.cmd.",
+  "mcpServers": {
+    "meruntime": {
+      "command": "npx.cmd",
+      "args": ["tsx", "C:/proyectos/MeRuntime/packages/proxy/src/server.ts"],
+      "cwd": "C:/proyectos/MeRuntime"
+    },
+    "meruntime-fullpath": {
+      "command": "C:\\Program Files\\nodejs\\npx.cmd",
+      "args": ["tsx", "C:/proyectos/MeRuntime/packages/proxy/src/server.ts"],
+      "cwd": "C:/proyectos/MeRuntime"
+    }
+  }
+}

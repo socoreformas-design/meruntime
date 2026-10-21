@@ -1,0 +1,12 @@
+{
+    "agentId": "demo-agent",
+    "action": "pay",
+    "tool": "http.request",
+    "amountEur": 200,
+    "effects": [
+        {
+            "kind": "pay",
+            "reversible": false
+        }
+    ]
+}

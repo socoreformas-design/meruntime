@@ -1,0 +1,34 @@
+{
+    "version": "1",
+    "userId": "me",
+    "default": "deny",
+    "allowHosts": [
+        "api.github.com"
+    ],
+    "denyActions": [
+        "delete",
+        "exec",
+        "grant"
+    ],
+    "ceilings": {
+        "perTxEur": 50
+    },
+    "rules": [
+        {
+            "effect": "allow",
+            "action": "read",
+            "tool": "http.request",
+            "host": "api.github.com"
+        },
+        {
+            "effect": "allow",
+            "action": "pay",
+            "tool": "payment.transfer"
+        }
+    ],
+    "knownIbans": [],
+    "approvalTimeoutMs": 300000,
+    "rateLimitPerSecond": 20,
+    "maxPendingRequests": 50,
+    "killSwitch": false
+}

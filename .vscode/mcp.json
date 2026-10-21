@@ -1,0 +1,13 @@
+{
+    "servers": {
+        "meruntime": {
+            "type": "stdio",
+            "command": "npm.cmd",
+            "args": [
+                "run",
+                "proxy"
+            ],
+            "cwd": "C:\\proyectos\\MeRuntime"
+        }
+    }
+}

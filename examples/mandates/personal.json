@@ -1,0 +1,38 @@
+{
+    "version": "1",
+    "userId": "demo",
+    "default": "deny",
+    "ceilings": {
+        "perTxEur": 40,
+        "dailySpendEur": 100
+    },
+    "allowHosts": [
+        "api.github.com"
+    ],
+    "denyActions": [
+        "delete"
+    ],
+    "rules": [
+        {
+            "effect": "allow",
+            "action": "read",
+            "tool": "http.request"
+        },
+        {
+            "effect": "confirm",
+            "action": "write",
+            "tool": "http.request",
+            "host": "httpbin.org"
+        },
+        {
+            "effect": "confirm",
+            "action": "write",
+            "tool": "http.request",
+            "host": "protected.local"
+        }
+    ],
+    "killSwitch": false,
+    "approvalTimeoutMs": 300000,
+    "rateLimitPerSecond": 20,
+    "maxPendingRequests": 50
+}

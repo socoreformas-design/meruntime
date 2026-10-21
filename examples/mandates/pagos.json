@@ -1,0 +1,26 @@
+{
+    "version": "1",
+    "userId": "demo",
+    "default": "deny",
+    "ceilings": {
+        "perTxEur": 50,
+        "dailySpendEur": 200
+    },
+    "knownIbans": [
+        "ES00 DEMO 0000 0000 0000 0001"
+    ],
+    "denyActions": [
+        "delete"
+    ],
+    "rules": [
+        {
+            "effect": "allow",
+            "action": "pay",
+            "tool": "payment.transfer"
+        }
+    ],
+    "killSwitch": false,
+    "approvalTimeoutMs": 300000,
+    "rateLimitPerSecond": 20,
+    "maxPendingRequests": 50
+}

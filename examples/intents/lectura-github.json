@@ -1,0 +1,12 @@
+{
+    "agentId": "demo-agent",
+    "action": "read",
+    "tool": "http.request",
+    "target": "https://api.github.com",
+    "effects": [
+        {
+            "kind": "read",
+            "reversible": true
+        }
+    ]
+}

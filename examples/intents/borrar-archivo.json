@@ -1,0 +1,12 @@
+{
+    "agentId": "demo-agent",
+    "action": "delete",
+    "tool": "fs.unlink",
+    "target": "C:\\Users\\demo\\importante.txt",
+    "effects": [
+        {
+            "kind": "delete",
+            "reversible": false
+        }
+    ]
+}

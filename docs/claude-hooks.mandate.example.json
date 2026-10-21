@@ -1,0 +1,35 @@
+{
+    "version": "1",
+    "userId": "me",
+    "default": "deny",
+    "approvalTimeoutMs": 300000,
+    "rateLimitPerSecond": 20,
+    "maxPendingRequests": 50,
+    "rules": [
+        {
+            "effect": "allow",
+            "action": "read",
+            "tool": "terminal.command"
+        },
+        {
+            "effect": "confirm",
+            "action": "exec",
+            "tool": "terminal.command"
+        },
+        {
+            "effect": "confirm",
+            "action": "write",
+            "tool": "terminal.command"
+        },
+        {
+            "effect": "confirm",
+            "action": "delete",
+            "tool": "terminal.command"
+        },
+        {
+            "effect": "deny",
+            "action": "send",
+            "tool": "terminal.command"
+        }
+    ]
+}

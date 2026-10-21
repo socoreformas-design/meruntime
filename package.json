@@ -1,0 +1,52 @@
+{
+    "name": "meruntime",
+    "version": "0.0.5",
+    "description": "Local gatekeeper for AI agents: GREEN / YELLOW / RED decisions, human approval and an audit trail.",
+    "private": true,
+    "license": "FSL-1.1-MIT",
+    "type": "module",
+    "bin": {
+        "meruntime": "dist/cli.js"
+    },
+    "files": [
+        "dist/cli.js",
+        "examples/mandates/",
+        "examples/emails/",
+        "README.md",
+        "README.es.md",
+        "LICENSE.md"
+    ],
+    "engines": {
+        "node": ">=20"
+    },
+    "scripts": {
+        "build": "node scripts/build.mjs",
+        "prepack": "node scripts/build.mjs",
+        "test": "node --import tsx --import ./scripts/test-setup.mjs --test packages/engine/src/evaluate.test.ts packages/engine/src/pending.test.ts packages/engine/src/kill.test.ts packages/engine/src/audit.test.ts packages/engine/src/protectedResource.test.ts packages/engine/src/bypass.test.ts packages/engine/src/approvalWait.test.ts packages/engine/src/requestRuntime.test.ts packages/engine/src/load.test.ts packages/engine/src/payment.test.ts packages/engine/src/httpAdapter.test.ts packages/engine/src/profiles.test.ts packages/engine/src/commandClassifier.test.ts packages/engine/src/authorizationRuntime.test.ts packages/cli/src/init.test.ts packages/cli/src/clients.test.ts packages/cli/src/pendingList.test.ts packages/cli/src/hook.test.ts packages/cli/src/serve.test.ts packages/ui/src/server.test.ts packages/http-api/src/server.test.ts packages/http-api/src/token.test.ts packages/web/src/entry.test.ts packages/cli/src/smoke.test.ts",
+        "build:windows": "node scripts/build-windows.mjs",
+        "build:web": "esbuild packages/web/src/entry.ts --bundle --format=iife --platform=browser --target=es2020 --minify --outfile=dist/web/meruntime-eval.js",
+        "eval": "tsx packages/cli/src/index.ts",
+        "proxy": "tsx packages/proxy/src/server.ts",
+        "request": "tsx packages/cli/src/request.ts",
+        "cli": "tsx packages/cli/src/cli.ts",
+        "pending": "tsx packages/cli/src/cli.ts pending",
+        "approve": "tsx packages/cli/src/cli.ts approve",
+        "deny": "tsx packages/cli/src/cli.ts deny",
+        "request-status": "tsx packages/cli/src/cli.ts request-status",
+        "kill": "tsx packages/cli/src/cli.ts kill",
+        "audit": "tsx packages/cli/src/cli.ts audit",
+        "bypass": "tsx packages/engine/src/bypass.test.ts",
+        "protected-serve": "tsx packages/engine/src/protectedServer.ts",
+        "fakebank": "tsx packages/cli/src/cli.ts fakebank",
+        "demo:iban": "tsx packages/cli/src/cli.ts demo iban"
+    },
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.12.0",
+        "zod": "^3.23.8"
+    },
+    "devDependencies": {
+        "esbuild": "^0.28.2",
+        "tsx": "^4.19.0",
+        "typescript": "^5.6.0"
+    }
+}
